@@ -1,0 +1,14 @@
+{
+  "name": "epicqr",
+  "url" : "https://github.com/captn3m0/epicqr",
+  "license": "MIT",
+  "tags": ["qr", "voter-id"],
+  "description": "Scan a EPIC QR code in an Indian Voter ID",
+  "version": "0.9.1",
+  "classPath": "src/",
+  "releasenote": "Initial release",
+  "contributors": ["captn3m0"],
+  "dependencies": {
+    "crypto": "1.0.4"
+  }
+}
