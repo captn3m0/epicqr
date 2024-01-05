@@ -1,0 +1,6 @@
+-cp src 
+eci.EpicQR
+-L crypto
+-w -WDeprecatedEnumAbstract
+# -js bin/lib.js
+--java src/

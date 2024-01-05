@@ -1,3 +1,5 @@
+package eci;
+
 import haxe.crypto.Aes;
 import haxe.io.Bytes;
 import haxe.crypto.mode.Mode;
@@ -5,15 +7,8 @@ import haxe.crypto.padding.Padding;
 import haxe.crypto.Base64;
 import haxe.Json;
 
-class Result {
-    public var epic:String;
-    public var id:String;
-
-    public function new(epic: String, id: String) {
-        this.epic  = epic;
-        this.id = id;
-    }
-}
+// Test using decrypt("kO5tAxYbv59IbQvmYBOJLw==") == NCS1234566
+// TODO: Write tests
 
 class EpicQR{
     // public static inline var KEY_SEED:String  = "tHzHtCcDd3V6p_9dOnse|_SX_4k$uq23.qT.L.(MgyJ7UH4n921J6UlKeck_S0Jl2znUY8CiMKyklWf2";
