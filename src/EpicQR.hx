@@ -7,7 +7,7 @@ import haxe.crypto.padding.Padding;
 import haxe.crypto.Base64;
 import haxe.Json;
 
-// Test using decrypt("kO5tAxYbv59IbQvmYBOJLw==") == NCS1234566
+// Test using decrypt("Kk0pDEzxYcusltFhJmqL/LLzJtXYHH/a1rJfkK2GjzA1x5jrzaeT1ULEF38L7/lIQ8w3c+H4ePeuVs2HuMYDUg==") == NCS1234566
 // TODO: Write tests
 
 class EpicQR{
