@@ -7,9 +7,6 @@ import haxe.crypto.padding.Padding;
 import haxe.crypto.Base64;
 import haxe.Json;
 
-// Test using decrypt("7+NGHfxDoqjXjk6iU0U6yTYhjWktxVe6eijj+9Nf36VYpzgIb+qIzxS6VSukYt6ANFCzuM6mZ4AO9oO4FFDAVw==") == {"epic_no":"NCS1234566","unique_generated_id":1234}
-// TODO: Write tests
-
 class EpicQR{
     // public static inline var KEY_SEED:String  = "tHzHtCcDd3V6p_9dOnse|_SX_4k$uq23.qT.L.(MgyJ7UH4n921J6UlKeck_S0Jl2znUY8CiMKyklWf2";
     // public static inline var KEY_PREFIX:String = "X_4k$uq23";
