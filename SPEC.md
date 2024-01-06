@@ -69,7 +69,7 @@ Note the extra space.
 ##### Encoded Base64
 
 ```text
-7+NGHfxDoqjXjk6iU0U6yTYhjWktxVe6eijj+9Nf36VYpzgIb+qIzxS6VSukYt6ANFCzuM6mZ4AO9oO4FFDAVw==
+dbhvecY6Roa4NF3gAzEbkTibZZzXAEYpMg8197BQWMS2+ID24FGDKWB5IEcuxjsA81ChprhSO3EsjKMRDbBWLg==
 ```
 
 See the recipe on [CyberChef][cyberchef].

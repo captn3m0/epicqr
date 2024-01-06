@@ -13,7 +13,7 @@ class EpicQR{
     // public static inline var SALT:String  = "FSwI.qT";
 
     public static inline var IV:String  = "H76$suq23_po(8sD";
-    public static inline var KEY:String = "X_4k$uq23FSwI.qT"; // KEY+SALT
+    public static inline var KEY:String = "X_4k$uq23FSwI.qT"; // KEY_PREFIX + SALT
 
     static function decode(input:String){
         var cipherText:Bytes = Base64.decode(input);

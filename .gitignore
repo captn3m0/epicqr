@@ -1,1 +1,4 @@
-library.zip
+haxe-build.zip
+build/
+
+*.jar
