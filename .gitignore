@@ -2,3 +2,4 @@ haxe-build.zip
 build/
 
 *.jar
+*.class
