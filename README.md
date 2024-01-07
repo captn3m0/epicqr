@@ -12,9 +12,11 @@ including PHP/Python/Flash/JVM/JS etc.
 ## TODO
 
 - [ ] Tests for Haxe.
+- [ ] Tests for Haxe with specific targets
 - [ ] Publish 1.0.
-- [ ] Publish releases in Swift.
-- [ ] Publish releases in JS.
+- [ ] Publish releases for Swift.
+- [ ] Publish releases for JS.
+- [ ] Publish releases for Nodejs.
 - [ ] Create maven release on GitHub Packages.
 - [ ] Create Demo website.
 
@@ -45,6 +47,14 @@ Result r1 = EpicQR.decode(e1);
 assert r1.epic.equals("ABC1234566") : "Invalid EPIC";
 assert r1.id == 1234 :  "Invalid Unique ID";
 ```
+
+### Nodejs
+```js
+// TODO Import
+const E = require('eci').EpicQR;
+var r = E.decode("dbhvecY6Roa4NF3gAzEbkTibZZzXAEYpMg8197BQWMS2+ID24FGDKWB5IEcuxjsA81ChprhSO3EsjKMRDbBWLg==")
+console.log(r.epic) // "ABC1234566"
+````
 
 ## Specification
 
