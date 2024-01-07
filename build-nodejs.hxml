@@ -1,0 +1,10 @@
+-cp src 
+-L crypto
+-L hxnodejs
+-w -WDeprecatedEnumAbstract
+-js src/eci/epic.js
+--dce full
+--macro keep('eci.EpicQR')
+--macro keep('eci.Result')
+-D js-es=6
+eci.EpicQR
