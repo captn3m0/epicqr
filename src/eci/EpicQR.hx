@@ -16,14 +16,12 @@ class EpicQR{
     public static inline var IV:String  = "H76$suq23_po(8sD";
     public static inline var KEY:String = "X_4k$uq23FSwI.qT"; // KEY_PREFIX + SALT
     private static inline var UTF8:String = "utf8";
-    private static inline var BASE64:String = "base64";
-    private static inline var NODEJS_CIPHER:String = "aes-128-cbc";
 
     static function decode(input : String){
         #if nodejs
-        var c = Crypto.createDecipheriv(NODEJS_CIPHER, Buffer.from(KEY, UTF8), Buffer.from(IV, UTF8));
+        var c = Crypto.createDecipheriv("aes-128-cbc", Buffer.from(KEY, UTF8), Buffer.from(IV, UTF8));
         c.setAutoPadding(false);
-        var decrypted = c.update(Buffer.from(input, BASE64));
+        var decrypted = c.update(Buffer.from(input, "base64"));
         var f = c.finalContents();
         decrypted = Buffer.concat([decrypted, f]);
 
@@ -31,7 +29,7 @@ class EpicQR{
         var paddingLength = decrypted[decrypted.length - 1];
         decrypted = decrypted.slice(0, decrypted.length - paddingLength);
 
-        return decrypted.toString(UTF8);
+        var _d = haxe.Json.parse(decrypted.toString(UTF8));
         #else
         var cipherText:Bytes = Base64.decode(input);
         
@@ -42,7 +40,7 @@ class EpicQR{
 
         var jsonString = c.decrypt(CBC,cipherText).toString();
         var _d = Json.parse(jsonString);
-        return new Result(_d.epic_no, _d.unique_generated_id);
         #end
+        return new Result(_d.epic_no, _d.unique_generated_id);
     }
 }

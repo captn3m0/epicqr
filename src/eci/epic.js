@@ -10,10 +10,17 @@ class eci_EpicQR {
 		decrypted = js_node_buffer_Buffer.concat([decrypted,f]);
 		let paddingLength = decrypted[decrypted.length - 1];
 		decrypted = decrypted.slice(0,decrypted.length - paddingLength);
-		return decrypted.toString("utf8");
+		let _d = JSON.parse(decrypted.toString("utf8"));
+		return new eci_Result(_d.epic_no,_d.unique_generated_id);
 	}
 }
 $hx_exports["eci"]["EpicQR"] = eci_EpicQR;
+class eci_Result {
+	constructor(epic,id) {
+		this.epic = epic;
+		this.id = id;
+	}
+}
 class haxe_iterators_ArrayIterator {
 	constructor(array) {
 		this.current = 0;
@@ -33,6 +40,4 @@ var js_node_buffer_Buffer = require("buffer").Buffer;
 eci_EpicQR.IV = "H76$suq23_po(8sD";
 eci_EpicQR.KEY = "X_4k$uq23FSwI.qT";
 eci_EpicQR.UTF8 = "utf8";
-eci_EpicQR.BASE64 = "base64";
-eci_EpicQR.NODEJS_CIPHER = "aes-128-cbc";
 })(typeof exports != "undefined" ? exports : typeof window != "undefined" ? window : typeof self != "undefined" ? self : this, {});
