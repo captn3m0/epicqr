@@ -2,8 +2,7 @@
 eci.EpicQR
 -L crypto
 -w -WDeprecatedEnumAbstract
--js bin/lib.js
+-js src/lib.js
 --dce full
 --macro keep('eci.EpicQR')
 --macro keep('eci.Result')
---verbose

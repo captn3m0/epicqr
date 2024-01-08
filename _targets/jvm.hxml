@@ -2,6 +2,5 @@
 eci.EpicQR
 -L crypto
 -w -WDeprecatedEnumAbstract
-# -js bin/lib.js
 --java src/
 -D source-map
