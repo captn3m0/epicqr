@@ -1,0 +1,10 @@
+-cp src
+-w -WDeprecatedEnumAbstract
+-php .
+--dce full
+--macro keep('eci.EpicQR')
+--macro keep('eci.Result')
+-D analyzer_optimize
+-D real-position
+-D php-lib=src
+eci.EpicQR

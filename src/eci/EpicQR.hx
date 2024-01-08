@@ -1,11 +1,17 @@
 package eci;
 
+#if php
+import php.Global;
+import php.Lib;
+#elseif nodejs
+import js.node.Crypto;
+import js.node.Buffer;
+#else
 import haxe.io.Bytes;
 import haxe.crypto.Base64;
 import haxe.crypto.mode.CBC;
 import haxe.Json;
-import js.node.Crypto;
-import js.node.Buffer;
+#end
 
 @:expose
 class EpicQR{
@@ -15,7 +21,9 @@ class EpicQR{
 
     public static inline var IV:String  = "H76$suq23_po(8sD";
     public static inline var KEY:String = "X_4k$uq23FSwI.qT"; // KEY_PREFIX + SALT
+    #if nodejs
     private static inline var UTF8:String = "utf8";
+    #end
 
     static function decode(input : String){
         #if nodejs
@@ -30,6 +38,11 @@ class EpicQR{
         decrypted = decrypted.slice(0, decrypted.length - paddingLength);
 
         var _d = haxe.Json.parse(decrypted.toString(UTF8));
+        #elseif php
+        var ct = Global.base64_decode(input);
+        var jsonString = Global.call_user_func('openssl_decrypt', ct, 'aes-128-cbc', KEY, 1, IV);
+        var _d = Global.json_decode(jsonString);
+
         #else
         var cipherText:Bytes = Base64.decode(input);
         

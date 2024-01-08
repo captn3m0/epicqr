@@ -3,3 +3,10 @@ build/
 
 *.jar
 *.class
+# These are generated PHP code for Haxe
+# but since our PHP code is so simple, we
+# don't need any of these
+src/php
+src/Array_hx.php
+src/Std.php
+src/haxe
